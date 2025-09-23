@@ -127,23 +127,32 @@ const Sidebar = () => {
         })}
       </nav>
 
-      {/* Quick Stats */}
+      {/* System Status Cards */}
       <div className="absolute bottom-4 left-4 right-4">
-        <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg p-4">
-          <h3 className="font-semibold text-sm text-foreground mb-2">System Status</h3>
-          <div className="space-y-2">
-            <div className="flex justify-between text-xs">
-              <span className="text-muted-foreground">Active Issues</span>
-              <span className="font-medium text-primary">127</span>
+        <h3 className="font-semibold text-sm text-foreground mb-3">System Status</h3>
+        <div className="grid grid-cols-2 gap-2">
+          <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg p-3">
+            <div className="text-xs font-medium text-foreground mb-1">Active Issues</div>
+            <div className="w-full bg-background/30 rounded-full h-1.5 mb-1">
+              <div className="bg-primary h-1.5 rounded-full" style={{ width: '85%' }}></div>
             </div>
-            <div className="flex justify-between text-xs">
-              <span className="text-muted-foreground">Response Rate</span>
-              <span className="font-medium text-secondary">94%</span>
+            <div className="text-xs font-bold text-primary">127</div>
+          </div>
+          
+          <div className="bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-lg p-3">
+            <div className="text-xs font-medium text-foreground mb-1">Response Rate</div>
+            <div className="w-full bg-background/30 rounded-full h-1.5 mb-1">
+              <div className="bg-secondary h-1.5 rounded-full" style={{ width: '94%' }}></div>
             </div>
-            <div className="flex justify-between text-xs">
-              <span className="text-muted-foreground">Avg. Resolution</span>
-              <span className="font-medium text-accent">18h</span>
+            <div className="text-xs font-bold text-secondary">94%</div>
+          </div>
+          
+          <div className="bg-gradient-to-br from-accent/10 to-accent/5 rounded-lg p-3 col-span-2">
+            <div className="text-xs font-medium text-foreground mb-1">Avg. Resolution Time</div>
+            <div className="w-full bg-background/30 rounded-full h-1.5 mb-1">
+              <div className="bg-accent h-1.5 rounded-full" style={{ width: '75%' }}></div>
             </div>
+            <div className="text-xs font-bold text-accent">18h</div>
           </div>
         </div>
       </div>

@@ -10,15 +10,15 @@ const Footer = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
           <div className="text-sm text-muted-foreground">
-            {t('footer.copyright')}
+            © Government of Jharkhand — Civic Issue Central System | Powered by Jharkhand Portal | Reserved 2025
           </div>
           
           <div className="flex items-center space-x-4 text-sm text-muted-foreground">
-            <span>{t('footer.contact')}</span>
+            <span>Contact: 0651-2234567</span>
             <Separator orientation="vertical" className="h-4" />
-            <span>{t('footer.helpdesk')}</span>
+            <span>Helpdesk: 1800-123-4567</span>
             <Separator orientation="vertical" className="h-4" />
-            <span className="text-xs">{t('footer.privacy')}</span>
+            <span className="text-xs">Privacy Policy</span>
           </div>
         </div>
         

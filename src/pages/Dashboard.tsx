@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { getDashboardStats } from '@/data/mockData';
 import { useLanguage } from '@/context/LanguageContext';
+import InteractiveMap from '@/components/InteractiveMap';
 
 const Dashboard = () => {
   const { t } = useLanguage();
@@ -73,7 +74,7 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="p-6 space-y-6 bg-background min-h-screen">
+    <div className="p-6 space-y-6 bg-background min-h-screen max-w-7xl mx-auto">
       {/* Page Header */}
       <div className="flex justify-between items-start">
         <div>
@@ -114,7 +115,7 @@ const Dashboard = () => {
       </Alert>
 
       {/* Statistics Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 max-w-7xl mx-auto">
         {statCards.map((stat, index) => {
           const Icon = stat.icon;
           return (
@@ -149,7 +150,7 @@ const Dashboard = () => {
       </div>
 
       {/* Main Content Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
         {/* Heatmap Section */}
         <Card className="lg:col-span-2">
           <CardHeader>
@@ -172,62 +173,8 @@ const Dashboard = () => {
               </div>
             </div>
           </CardHeader>
-          <CardContent>
-            {lowBandwidth ? (
-              <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
-                <div className="text-center space-y-2">
-                  <MapPin className="w-12 h-12 text-muted-foreground mx-auto" />
-                  <p className="text-sm text-muted-foreground">Static Map Mode</p>
-                  <p className="text-xs text-muted-foreground">Interactive map disabled for low bandwidth</p>
-                  <Button variant="outline" size="sm" onClick={() => setLowBandwidth(false)}>
-                    Enable Interactive Map
-                  </Button>
-                </div>
-              </div>
-            ) : (
-              <div className="aspect-video bg-gradient-to-br from-green-50 to-blue-50 rounded-lg relative overflow-hidden">
-                {/* Mock Interactive Map */}
-                <div className="absolute inset-0 bg-gradient-to-br from-green-100/50 to-blue-100/50">
-                  {/* Mock District Markers */}
-                  <div className="absolute top-1/4 left-1/3 w-4 h-4 bg-red-500 rounded-full animate-pulse shadow-lg"></div>
-                  <div className="absolute top-1/2 left-1/2 w-3 h-3 bg-orange-500 rounded-full animate-pulse shadow-lg"></div>
-                  <div className="absolute top-3/4 left-2/3 w-5 h-5 bg-red-600 rounded-full animate-pulse shadow-lg"></div>
-                  <div className="absolute top-1/3 right-1/4 w-3 h-3 bg-yellow-500 rounded-full animate-pulse shadow-lg"></div>
-                  
-                  {/* District Labels */}
-                  <div className="absolute top-1/4 left-1/3 ml-6 bg-white/90 px-2 py-1 rounded text-xs font-medium shadow">
-                    Ranchi (45 issues)
-                  </div>
-                  <div className="absolute top-1/2 left-1/2 ml-6 bg-white/90 px-2 py-1 rounded text-xs font-medium shadow">
-                    Dhanbad (23 issues)
-                  </div>
-                  <div className="absolute top-3/4 left-2/3 ml-6 bg-white/90 px-2 py-1 rounded text-xs font-medium shadow">
-                    Jamshedpur (67 issues)
-                  </div>
-                </div>
-                
-                {/* Map Controls */}
-                <div className="absolute top-4 right-4 space-y-2">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-lg">
-                    <h4 className="font-semibold text-sm mb-2">Legend</h4>
-                    <div className="space-y-1 text-xs">
-                      <div className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                        <span>High Priority (40+)</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                        <span>Medium Priority (20-39)</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-                        <span>Low Priority (&lt;20)</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
+          <CardContent className="p-6">
+            <InteractiveMap lowBandwidth={lowBandwidth} />
           </CardContent>
         </Card>
 

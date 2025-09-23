@@ -47,6 +47,18 @@ const Header = () => {
       </div>
 
       <div className="flex items-center space-x-3">
+        {/* Low Bandwidth Toggle */}
+        <Button 
+          variant="ghost" 
+          size="sm"
+          className="text-white hover:bg-white/20"
+        >
+          <Badge variant="outline" className="text-xs border-white/30 text-white bg-transparent">
+            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse mr-1"></div>
+            High Quality
+          </Badge>
+        </Button>
+
         {/* Language Toggle */}
         <Button 
           variant="ghost" 
