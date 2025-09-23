@@ -132,27 +132,33 @@ const Sidebar = () => {
         <h3 className="font-semibold text-sm text-foreground mb-3">System Status</h3>
         <div className="grid grid-cols-2 gap-2">
           <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg p-3">
-            <div className="text-xs font-medium text-foreground mb-1">Active Issues</div>
-            <div className="w-full bg-background/30 rounded-full h-1.5 mb-1">
-              <div className="bg-primary h-1.5 rounded-full" style={{ width: '85%' }}></div>
+            <div className="text-xs font-medium text-foreground mb-2">Active Issues</div>
+            <div className="flex items-center justify-between mb-1">
+              <div className="w-3/4 bg-background/30 rounded-full h-1.5">
+                <div className="bg-primary h-1.5 rounded-full" style={{ width: '85%' }}></div>
+              </div>
+              <div className="text-xs font-bold text-primary ml-2">127</div>
             </div>
-            <div className="text-xs font-bold text-primary">127</div>
           </div>
           
           <div className="bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-lg p-3">
-            <div className="text-xs font-medium text-foreground mb-1">Response Rate</div>
-            <div className="w-full bg-background/30 rounded-full h-1.5 mb-1">
-              <div className="bg-secondary h-1.5 rounded-full" style={{ width: '94%' }}></div>
+            <div className="text-xs font-medium text-foreground mb-2">Response Rate</div>
+            <div className="flex items-center justify-between mb-1">
+              <div className="w-3/4 bg-background/30 rounded-full h-1.5">
+                <div className="bg-secondary h-1.5 rounded-full" style={{ width: '94%' }}></div>
+              </div>
+              <div className="text-xs font-bold text-secondary ml-2">94%</div>
             </div>
-            <div className="text-xs font-bold text-secondary">94%</div>
           </div>
           
           <div className="bg-gradient-to-br from-accent/10 to-accent/5 rounded-lg p-3 col-span-2">
-            <div className="text-xs font-medium text-foreground mb-1">Avg. Resolution Time</div>
-            <div className="w-full bg-background/30 rounded-full h-1.5 mb-1">
-              <div className="bg-accent h-1.5 rounded-full" style={{ width: '75%' }}></div>
+            <div className="text-xs font-medium text-foreground mb-2">Avg. Resolution Time</div>
+            <div className="flex items-center justify-between mb-1">
+              <div className="w-3/4 bg-background/30 rounded-full h-1.5">
+                <div className="bg-accent h-1.5 rounded-full" style={{ width: '75%' }}></div>
+              </div>
+              <div className="text-xs font-bold text-accent ml-2">18h</div>
             </div>
-            <div className="text-xs font-bold text-accent">18h</div>
           </div>
         </div>
       </div>
