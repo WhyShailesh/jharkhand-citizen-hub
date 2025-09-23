@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'hind': ['Hind', 'Noto Sans', 'sans-serif'],
+        'noto': ['Noto Sans', 'Hind', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -22,10 +26,12 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          hover: "hsl(var(--primary-hover))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
+          hover: "hsl(var(--secondary-hover))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -56,6 +62,13 @@ export default {
           "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
+        },
+        status: {
+          new: "hsl(var(--status-new))",
+          acknowledged: "hsl(var(--status-acknowledged))",
+          progress: "hsl(var(--status-progress))",
+          resolved: "hsl(var(--status-resolved))",
+          closed: "hsl(var(--status-closed))",
         },
       },
       borderRadius: {
