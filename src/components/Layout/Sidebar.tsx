@@ -128,7 +128,7 @@ const Sidebar = () => {
       </nav>
 
       {/* System Status Cards */}
-      <div className="absolute bottom-4 left-4 right-4">
+      <div className="absolute bottom-4 left-4 w-56">
         <h3 className="font-semibold text-sm text-foreground mb-3">System Status</h3>
         <div className="grid grid-cols-2 gap-2">
           <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg p-3">
